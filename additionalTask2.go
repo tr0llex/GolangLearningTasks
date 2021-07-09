@@ -26,7 +26,7 @@ func startWorker(workerNum int, in <-chan string) {
 			workerNum, input, uniqSymbols)
 		runtime.Gosched()
 	}
-	fmt.Printf("Воркер №%v завершил работу\n", workerNum)
+	fmt.Printf("Воркер №%v завершил работу\n\n", workerNum)
 }
 
 func main() {
