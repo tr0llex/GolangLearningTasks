@@ -51,6 +51,10 @@ func main() {
 			a, stackIsEmpty = stack.Pop()
 			b, stackIsEmpty = stack.Pop()
 			stack.Push(a * b)
+		case "/":
+			a, stackIsEmpty = stack.Pop()
+			b, stackIsEmpty = stack.Pop()
+			stack.Push(b / a)
 		default:
 			number, _ := strconv.Atoi(v)
 			stack.Push(number)
