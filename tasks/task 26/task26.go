@@ -4,18 +4,13 @@ import "fmt"
 
 func reverse(a string) string {
 	slice := []rune(a)
-	var temp []rune
-	for i := len(slice) - 1; i >= 1; i -= 2 {
-		temp = append(temp, slice[i], slice[i-1])
+	for i, j := 0, len(slice)-1; i < j; i, j = i+1, j-1 {
+		slice[i], slice[j] = slice[j], slice[i]
 	}
-	if len(slice)%2 == 1 {
-		temp = append(temp, slice[0])
-	}
-	return string(temp)
+	return string(slice)
 }
 
 func main() {
 	b := "❤💛💔"
 	fmt.Println(reverse(b))
-
 }
