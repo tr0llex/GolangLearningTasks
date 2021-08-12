@@ -54,7 +54,12 @@ func main() {
 		case "/":
 			a, stackIsEmpty = stack.Pop()
 			b, stackIsEmpty = stack.Pop()
-			stack.Push(b / a)
+			if a == 0 {
+				fmt.Println("Error! Division by zero!")
+				return
+			} else {
+				stack.Push(b / a)
+			}
 		default:
 			number, _ := strconv.Atoi(v)
 			stack.Push(number)
