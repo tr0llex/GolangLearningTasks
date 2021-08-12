@@ -69,5 +69,6 @@ func main() {
 			return
 		}
 	}
-	fmt.Println(stack.Pop())
+	result, _ := stack.Pop()
+	fmt.Println(result)
 }
